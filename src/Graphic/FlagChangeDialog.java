@@ -10,6 +10,7 @@ import java.awt.event.*;
 public class FlagChangeDialog extends JDialog implements MouseListener {
     private CarAgencyPanel panel;
     private ImageIcon Israel, USA, Germany, Italy, Greece, Somalia, Pirate;
+    private JLabel label1,label2,label3,label4,label5,label6,label7;
     public FlagChangeDialog(CarAgencyPanel panel, String title )
     {
         super(new JFrame(),title,true);
@@ -39,13 +40,13 @@ public class FlagChangeDialog extends JDialog implements MouseListener {
             Somalia.setDescription("Somalia");
             Pirate.setDescription("Pirate");
 
-            JLabel label1 = new JLabel(Israel);
-            JLabel label2 = new JLabel(USA);
-            JLabel label3 = new JLabel(Germany);
-            JLabel label4 = new JLabel(Italy);
-            JLabel label5 = new JLabel(Greece);
-            JLabel label6 = new JLabel(Somalia);
-            JLabel label7 = new JLabel(Pirate);
+            label1 = new JLabel(Israel);
+            label2 = new JLabel(USA);
+            label3 = new JLabel(Germany);
+            label4 = new JLabel(Italy);
+            label5 = new JLabel(Greece);
+            label6 = new JLabel(Somalia);
+            label7 = new JLabel(Pirate);
 
             label1.addMouseListener(this);
             label2.addMouseListener(this);
@@ -73,34 +74,34 @@ public class FlagChangeDialog extends JDialog implements MouseListener {
 
         for (int i = 0; i< panel.VehiclesList.size(); i++)
         {
-            if((panel.VehiclesList.get(i) instanceof MarineVehicle) ||(panel.VehiclesList.get(i) instanceof Amphibious))
+            if(panel.VehiclesList.get(i) instanceof MarineVehicle)
             {
-                if( e.getSource()==Israel)
+                if( e.getSource()==label1)
                 {
                     ((MarineVehicle)panel.VehiclesList.get(i)).setCountryFlag(Israel.getDescription());
                 }
 
-                else if( e.getSource()==USA)
+                else if( e.getSource()==label2)
                 {
                     ((MarineVehicle)panel.VehiclesList.get(i)).setCountryFlag(USA.getDescription());
                 }
 
-                else if( e.getSource()==Germany)
+                else if( e.getSource()==label3)
                 {
                     ((MarineVehicle)panel.VehiclesList.get(i)).setCountryFlag(Germany.getDescription());
                 }
 
-                else if( e.getSource()==Italy)
+                else if( e.getSource()==label4)
                 {
                     ((MarineVehicle)panel.VehiclesList.get(i)).setCountryFlag(Italy.getDescription());
                 }
 
-                else if( e.getSource()==Greece)
+                else if( e.getSource()==label5)
                 {
                     ((MarineVehicle)panel.VehiclesList.get(i)).setCountryFlag(Greece.getDescription());
                 }
 
-                else if( e.getSource()==Somalia)
+                else if( e.getSource()==label6)
                 {
                     ((MarineVehicle)panel.VehiclesList.get(i)).setCountryFlag(Somalia.getDescription());
                 }
@@ -112,6 +113,45 @@ public class FlagChangeDialog extends JDialog implements MouseListener {
                 DoesMarineExist = true;
                 setVisible(false);
 
+            }
+            if((panel.VehiclesList.get(i) instanceof Amphibious))
+            {
+                if( e.getSource()==label1)
+                {
+                    ((Amphibious)panel.VehiclesList.get(i)).setCountryFlag(Israel.getDescription());
+                }
+
+                else if( e.getSource()==label2)
+                {
+                    ((Amphibious)panel.VehiclesList.get(i)).setCountryFlag(USA.getDescription());
+                }
+
+                else if( e.getSource()==label3)
+                {
+                    ((Amphibious)panel.VehiclesList.get(i)).setCountryFlag(Germany.getDescription());
+                }
+
+                else if( e.getSource()==label4)
+                {
+                    ((Amphibious)panel.VehiclesList.get(i)).setCountryFlag(Italy.getDescription());
+                }
+
+                else if( e.getSource()==label5)
+                {
+                    ((Amphibious)panel.VehiclesList.get(i)).setCountryFlag(Greece.getDescription());
+                }
+
+                else if( e.getSource()==label6)
+                {
+                    ((Amphibious)panel.VehiclesList.get(i)).setCountryFlag(Somalia.getDescription());
+                }
+
+                else
+                {
+                    ((Amphibious)panel.VehiclesList.get(i)).setCountryFlag(Pirate.getDescription());
+                }
+                DoesMarineExist = true;
+                setVisible(false);
             }
         }
         if(DoesMarineExist==false)

@@ -108,21 +108,21 @@ public class Amphibious extends Vehicle implements  Motorized{
     public String toString() {
         String landVehicleDetails =
                 "Model Name: " + landVehicle.getModelName() + "\n" +
-                        "Max Passengers: " + landVehicle.getMaxPassengers() + "\n" +
-                        "Max Speed: " + landVehicle.getMaxSpeed() + "\n" +
-                        "Number of Wheels: " + landVehicle.getNumOfWheels() + "\n" +
-                        "Road Type: " + landVehicle.getRoadType() + "\n" +
-                        "Kilometrage: " + landVehicle.getKilometrage() + "\n";
+                        " Max Passengers: " + landVehicle.getMaxPassengers() + "\n" +
+                        " Max Speed: " + landVehicle.getMaxSpeed() + "\n" +
+                        " Number of Wheels: " + landVehicle.getNumOfWheels() + "\n" +
+                        " Road Type: " + landVehicle.getRoadType() + "\n" +
+                        " Kilometrage: " + landVehicle.getKilometrage() + "\n";
 
         String marineVehicleDetails =
-                "Sail With Wind: " + marineVehicle.getSailWithWind() + "\n" +
-                        "Country Flag: " + marineVehicle.getCountryFlag() + "\n";
+                " Sail With Wind: " + marineVehicle.getSailWithWind() + "\n" +
+                        " Country Flag: " + marineVehicle.getCountryFlag() + "\n";
 
         String motorizedDetails =
-                "Average Fuel: " + getAverageFuel() + "\n" +
-                        "Average Engine Life: " + getAverageEngineLife() + "\n";
+                " Average Fuel: " + getAverageFuel() + "\n" +
+                        " Average Engine Life: " + getAverageEngineLife() + "\n";
 
-        return "Amphibious Vehicle Details:\n" +
+        return " Amphibious Vehicle Details:\n" +
                 landVehicleDetails + "\n" +
                 marineVehicleDetails + "\n" +
                 motorizedDetails;
